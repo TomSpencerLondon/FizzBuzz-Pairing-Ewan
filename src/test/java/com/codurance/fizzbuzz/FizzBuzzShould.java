@@ -29,7 +29,12 @@ public class FizzBuzzShould {
   }
 
   @Test
-  public void return_fizz_for_multiple_of_three() {
+  public void return_fizz_for_three() {
     assertEquals("fizz", fizzBuzz.convert(3));
+  }
+
+  @Test
+  public void return_fizz_for_six() {
+    assertEquals("fizz", fizzBuzz.convert(6));
   }
 }

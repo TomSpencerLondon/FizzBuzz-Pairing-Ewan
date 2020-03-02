@@ -2,7 +2,7 @@ package com.codurance.fizzbuzz;
 
 public class FizzBuzz {
   public String convert(int i) {
-    if (i == 3 || i == 6) return "fizz";
+    if (i % 3 == 0) return "fizz";
     return String.valueOf(i);
   }
 }

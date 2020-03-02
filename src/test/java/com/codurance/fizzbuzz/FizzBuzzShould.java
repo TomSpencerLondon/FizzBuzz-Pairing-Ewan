@@ -1,6 +1,5 @@
 package com.codurance.fizzbuzz;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,13 +8,19 @@ import static org.junit.Assert.assertEquals;
 public class FizzBuzzShould {
   FizzBuzz fizzBuzz;
   @Before
-  public void setUp() throws Exception {
+  public void setUp() {
     fizzBuzz = new FizzBuzz();
   }
 
   @Test
-  public void returns_number_if_not_multiple_of_three_or_five() {
+  public void return_number_if_not_multiple_of_three_or_five() {
     int number = 1;
-    assertEquals(number, fizzBuzz.convert(number));
+    assertEquals(String.valueOf(number), fizzBuzz.convert(number));
+  }
+
+  @Test
+  public void return_fizz_for_a_multiple_of_three() {
+    int number = 3;
+    assertEquals("fizz", fizzBuzz.convert(3));
   }
 }

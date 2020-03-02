@@ -2,7 +2,8 @@ package com.codurance.fizzbuzz;
 
 public class FizzBuzz {
 
-  public int convert(int number) {
-    return number;
+  public String convert(int number) {
+    if (number % 3 == 0) return "fizz";
+    return String.valueOf(number);
   }
 }

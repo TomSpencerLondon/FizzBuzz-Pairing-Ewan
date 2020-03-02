@@ -15,4 +15,9 @@ public class FizzBuzzShould {
   public void return_one_for_one() {
     Assert.assertEquals("1", fizzBuzz.convert(1));
   }
+
+  @Test
+  public void return_two_for_two() {
+    Assert.assertEquals("2", fizzBuzz.convert(2));
+  }
 }

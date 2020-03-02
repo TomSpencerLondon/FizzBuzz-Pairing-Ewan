@@ -16,10 +16,7 @@ public class FizzBuzz {
 
     if (multipleOf(3)) result += "fizz";
     if (multipleOf( 5)) result += "buzz";
-    if (result == "")
-      return String.valueOf(number);
-
-    return result;
+    return result == "" ? String.valueOf(number) : result;
   }
 
   private boolean multipleOf(int i) {

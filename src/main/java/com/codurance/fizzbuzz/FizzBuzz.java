@@ -1,6 +1,8 @@
 package com.codurance.fizzbuzz;
 
 public class FizzBuzz {
+  private int number;
+
   public static void main(String[] args) {
     FizzBuzz fizzBuzz = new FizzBuzz();
     for (int i = 1; i <= 100; i++) {
@@ -8,13 +10,19 @@ public class FizzBuzz {
     }
   }
 
-  public String convert(int number) {
+  public String convert(int fizzNumber) {
+    number = fizzNumber;
     String result = "";
-    if (number % 3 == 0) result += "fizz";
-    if (number % 5 == 0) result += "buzz";
+
+    if (multipleOf(3)) result += "fizz";
+    if (multipleOf( 5)) result += "buzz";
     if (result == "")
       return String.valueOf(number);
 
     return result;
+  }
+
+  private boolean multipleOf(int i) {
+    return number % i == 0;
   }
 }

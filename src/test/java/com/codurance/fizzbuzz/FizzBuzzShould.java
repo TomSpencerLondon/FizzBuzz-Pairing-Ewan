@@ -14,32 +14,37 @@ public class FizzBuzzShould {
   }
 
   @Test
-  public void return_one_for_one() {
+  public void return_1_for_1() {
     assertEquals("1", fizzBuzz.convert(1));
   }
 
   @Test
-  public void return_two_for_two() {
+  public void return_1_for_2() {
     assertEquals("2", fizzBuzz.convert(2));
   }
 
   @Test
-  public void return_four_for_four() {
+  public void return_4_for_4() {
     assertEquals("4", fizzBuzz.convert(4));
   }
 
   @Test
-  public void return_fizz_for_three() {
+  public void return_fizz_for_3() {
     assertEquals("fizz", fizzBuzz.convert(3));
   }
 
   @Test
-  public void return_fizz_for_six() {
+  public void return_fizz_for_6() {
     assertEquals("fizz", fizzBuzz.convert(6));
   }
 
   @Test
   public void return_fizz_for_9() {
     assertEquals("fizz", fizzBuzz.convert(9));
+  }
+
+  @Test
+  public void return_buzz_for_5() {
+    assertEquals("buzz", fizzBuzz.convert(5));
   }
 }

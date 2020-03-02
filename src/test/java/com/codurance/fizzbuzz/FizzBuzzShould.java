@@ -23,4 +23,16 @@ public class FizzBuzzShould {
     int number = 3;
     assertEquals("fizz", fizzBuzz.convert(3));
   }
+
+  @Test
+  public void return_buzz_for_a_multiple_of_five() {
+    int number = 5;
+    assertEquals("buzz", fizzBuzz.convert(number));
+  }
+
+  @Test
+  public void returns_fizzbuzz_for_a_multiple_of_15() {
+    int number = 15;
+    assertEquals("fizzbuzz", fizzBuzz.convert(number));
+  }
 }

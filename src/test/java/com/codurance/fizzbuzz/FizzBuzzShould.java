@@ -1,10 +1,14 @@
 package com.codurance.fizzbuzz;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static org.junit.Assert.assertEquals;
 
+@RunWith(JUnitParamsRunner.class)
 public class FizzBuzzShould {
   FizzBuzz fizzBuzz;
   @Before
@@ -13,62 +17,43 @@ public class FizzBuzzShould {
   }
 
   @Test
-  public void return_1_for_1() {
-    assertEquals("1", fizzBuzz.convert(1));
+  @Parameters({
+          "1, 1",
+          "2, 2",
+          "4, 4"
+  })
+  public void return_number_for_even(int input, String converted) {
+    assertEquals(converted, fizzBuzz.convert(input));
+  }
+
+
+  @Test
+  @Parameters({
+          "3",
+          "6",
+          "9"
+  })
+  public void return_fizz_for_multiple_of_3(int input) {
+    assertEquals("fizz", fizzBuzz.convert(input));
   }
 
   @Test
-  public void return_1_for_2() {
-    assertEquals("2", fizzBuzz.convert(2));
+  @Parameters({
+          "5",
+          "10",
+          "20"
+  })
+  public void return_buzz_for_multiple_of_5(int input) {
+    assertEquals("buzz", fizzBuzz.convert(input));
   }
 
   @Test
-  public void return_4_for_4() {
-    assertEquals("4", fizzBuzz.convert(4));
-  }
-
-  @Test
-  public void return_fizz_for_3() {
-    assertEquals("fizz", fizzBuzz.convert(3));
-  }
-
-  @Test
-  public void return_fizz_for_6() {
-    assertEquals("fizz", fizzBuzz.convert(6));
-  }
-
-  @Test
-  public void return_fizz_for_9() {
-    assertEquals("fizz", fizzBuzz.convert(9));
-  }
-
-  @Test
-  public void return_buzz_for_5() {
-    assertEquals("buzz", fizzBuzz.convert(5));
-  }
-
-  @Test
-  public void return_buzz_for_10() {
-    assertEquals("buzz", fizzBuzz.convert(10));
-  }
-
-  @Test
-  public void return_buzz_for_20() {
-    assertEquals("buzz", fizzBuzz.convert(20));
-  }
-
-  @Test
-  public void return_fizzbuzz_for_15() {
-    assertEquals("fizzbuzz", fizzBuzz.convert(15));
-  }
-
-  @Test
-  public void return_fizzbuzz_for_30() {
-    assertEquals("fizzbuzz", fizzBuzz.convert(30));
-  }
-
-  @Test
-  public void return_fizzbuzz_for_45() {
-    assertEquals("fizzbuzz", fizzBuzz.convert(45));
+  @Parameters({
+          "15",
+          "30",
+          "45"
+  })
+  public void return_fizzbuzz_for_multiple_of_3_and_5(int input) {
+    assertEquals("fizzbuzz", fizzBuzz.convert(input));
   }
 }
